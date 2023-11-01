@@ -1,0 +1,25 @@
+syntax = "proto3";
+package protoPackage;
+option go_package = "./protoPackage";
+
+message Student {
+  int32 id =3;
+  string name=2;
+  string email=1;
+}
+
+message Empty {}
+
+message AddPersonReq{
+  Student student =1;
+}
+
+message GetDetailsReq{
+  int32 id =1;
+}
+
+service AddressBook{
+  rpc GetStudentDetails(GetDetailsReq) returns (Student);
+  rpc AddPerson(AddPersonReq) returns (Empty);
+  //rpc AddPerson(Student) returns (Empty);
+}

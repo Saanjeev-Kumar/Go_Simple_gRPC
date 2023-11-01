@@ -1,0 +1,12 @@
+complier to generate the grpc and definition
+
+protoc
+
+protoc --go_out=.  protoPackage/test.proto
+protoc --go-grpc_out=. protoPackage/test.proto
+protoc --go-grpc_out=require_unimplemented_servers=false:. protoPackage/test.proto
+
+
+Run
+
+go run .
